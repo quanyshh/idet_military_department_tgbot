@@ -38,6 +38,8 @@ async def show_question(callback: types.CallbackQuery, language, main_menu, ques
     id = int(questions[-1])
     if id == 8:
         await bot.send_photo(chat_id = chat_id, photo=open(f'data/{language}_standards.png', 'rb'))
+    elif id == 9:
+        await bot.send_photo(chat_id = chat_id, photo=open(f'data/grafik_{language}.jpeg', 'rb'))
     else:
         await callback.message.edit_text(text, reply_markup=markup, parse_mode="HTML")
 
